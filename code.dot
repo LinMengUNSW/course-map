@@ -58,6 +58,7 @@ digraph G {
             rank = same; CODE2230;
         }
     }
+    
     // Ubiquitous Cities intoduces these skills
     dummy1231 [label="_" shape=plaintext] //Placeholder for skills that don't go anywhere yet
     CODE1231 -> dummy1231 [label="Microcontroller\nprogramming"]
@@ -108,14 +109,24 @@ digraph G {
     //Y1T2 skills
     // Design Computing intoduces these skills
     dummy1161 [label="_" shape=plaintext] //Placeholder for skills that don't go anywhere yet
-    CODE1161 -> dummy1161 [label="Python\nProgramming"]
-    CODE1161 -> dummy1161 [label="Basic\nGit"]
-    CODE1161 -> dummy1161 [label="Github"]
-    CODE1161 -> dummy1161 [label="Basic\nData\nLiteracy"]
-    CODE1161 -> dummy1161 [label="File\nSystem"]
-    CODE1161 -> dummy1161 [label="Data\nvis"]
-    CODE1161 -> dummy1161 [label="MatPlotLib"]
-    CODE1161 -> dummy1161 [label="Basic\nGeospatial\nconcepts"]
+    skillCODE1161python     [label="Python \n Programming" shape=MSquare]
+    skillCODE1161git        [label="Basic\nGitn\Github" shape=MSquare]
+    skillCODE1161IO         [label="File\nSystem" shape=MSquare]
+    skillCODE1161data       [label="Data Manipulation\nPandas" shape=MSquare]
+    skillCODE1161vis        [label="Data-vis\nMatplotlib\nGeoPandas" shape=MSquare]
+    CODE1161 -> skillCODE1161python
+    CODE1161 -> skillCODE1161git
+    CODE1161 -> skillCODE1161IO
+    CODE1161 -> skillCODE1161vis
+    
+    #CODE1161 -> dummy1161 [label="Basic\nGit"]
+    #CODE1161 -> dummy1161 [label="Github"]
+    #CODE1161 -> dummy1161 [label="Basic\nData\nLiteracy"]
+    #CODE1161 -> dummy1161 [label="File\nSystem"]
+    #CODE1161 -> dummy1161 [label="Data\nvis"]
+    #CODE1161 -> dummy1161 [label="MatPlotLib"]
+    #CODE1161 -> dummy1161 [label="Basic\nGeospatial\nconcepts"]
+
     
     dummyCODE1240 [label="_" shape=plaintext]
     CODE1240 -> dummyCODE1240 [label="Todo"]
@@ -136,15 +147,37 @@ digraph G {
     CODE1231 -> dummyCODE1231 [label="Todo"]
     dummyCODE2132 [label="_" shape=plaintext]
     CODE2132 -> dummyCODE2132 [label="Todo"]
-    CODE2132 -> CODE1234 [label="todo"]
+    CODE2132 -> CODE1234 [label="Data Collection"]
 
     //Y2T2 skills
-    dummyCODE1234 [label="_" shape=plaintext]
-    CODE1234 -> dummyCODE1234 [label="AutoML"]
-    CODE1234 -> dummyCODE1234 [label="Tableau"]
-    CODE1234 -> dummyCODE1234 [label="ABS\nData"]
-    dummyCODE2120 [label="_" shape=plaintext]
-    CODE2120 -> dummyCODE2120 [label="Todo"]
+    
+    //CODE1234 Nodes:
+    dummyCODE1234           [label="_" shape=plaintext]
+    skillCODE1234ml         [label="ML Concepts\nAutoML" shape=MSquare]
+    skillCODE1234datavis    [label="Datavis\nTableau" shape=MSquare]
+    skillCODE1234data       [label="ABS Datapack" shape=MSquare]
+    skillCODE1234GH         [label="GH\nParametric Design" shape=MSquare]
+    skillCODE1234Urban      [label="Urban Design\nPrinciples" shape=MSquare]
+    //CODE1234Links
+    skillCODE1161data   -> CODE1234
+    skillCODE1161vis    -> CODE1234
+    skillCODE1161python -> CODE1234
+    skillCODE2132GH     -> CODE1234
+    CODE1234            -> skillCODE1234ml
+    CODE1234            -> skillCODE1234datavis
+    CODE1234            -> skillCODE1234data
+    CODE1234            -> skillCODE1234GH
+    CODE1234            -> skillCODE1234Urban
+
+    
+    
+    
+    #CODE1234 -> dummyCODE1234 [label="ML\nAutoML"]
+    #CODE1234 -> dummyCODE1234 [label="Datavis\nTableau"]
+    #CODE1234 -> dummyCODE1234 [label="ABS\nData"]
+    #CODE1234 -> dummyCODE1234 [label="GH\nParametric\nUrban Design"]
+    #dummyCODE2120 [label="_" shape=plaintext]
+    #CODE2120 -> dummyCODE2120 [label="Todo"]
 
     //Y2T3 skills
     dummyCODE2230 [label="_" shape=plaintext]
